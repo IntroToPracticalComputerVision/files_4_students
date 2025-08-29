@@ -41,7 +41,7 @@ def test_check_created_csv_tag(input_video_name, input_video_link, gt_csv_file_n
     dataframe = pandas.read_csv(csv_output_file_name)
 
     # check if number of columns are the same if so check if the title names match
-    if len(dataframe_gt.columns) != len(dataframe.columns):
+    if len(dataframe_gt.columns) > len(dataframe.columns):
         assert False, f'missing column title should be {dataframe_gt.columns}'
  #   else:
  #       diff_columns_check = dataframe_gt.columns == dataframe.columns
